@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:workmanager/workmanager.dart';
 
 import '../entities/shopping_item_entity.dart';
 import '../helpers/dialogs.dart';
@@ -105,6 +106,16 @@ class _ChecklistPageState extends State<ChecklistPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Workmanager().registerPeriodicTask(
+            "1",
+            "simpleTask",
+            frequency: const Duration(minutes: 15),
+          );
+        },
+        child: const Icon(Icons.add),
+      ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
