@@ -1,0 +1,413 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "args",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/args-2.6.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "async",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/async-2.12.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "bloc",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/bloc-8.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "boolean_selector",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/boolean_selector-2.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "cbl",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/cbl-3.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "cbl_flutter",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/cbl_flutter-3.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "cbl_flutter_ce",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/cbl_flutter_ce-3.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "cbl_flutter_platform_interface",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/cbl_flutter_platform_interface-3.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "cbl_libcblite_api",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/cbl_libcblite_api-3.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "cbl_libcblitedart_api",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/cbl_libcblitedart_api-7.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "characters",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/characters-1.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "clock",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/clock-1.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "collection",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/collection-1.18.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "connectivity_plus",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/connectivity_plus-6.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "connectivity_plus_platform_interface",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/connectivity_plus_platform_interface-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "crypto",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/crypto-3.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "cupertino_icons",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/cupertino_icons-1.0.8",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "dbus",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/dbus-0.7.10",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "fake_async",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/fake_async-1.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "ffi",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/ffi-2.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "flutter",
+      "rootUri": "file:///C:/Users/willi/dev/flutter/packages/flutter",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "flutter_bloc",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_bloc-8.1.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_dotenv",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_dotenv-5.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "flutter_lints",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "flutter_test",
+      "rootUri": "file:///C:/Users/willi/dev/flutter/packages/flutter_test",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///C:/Users/willi/dev/flutter/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "google_fonts",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/google_fonts-6.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "http",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/http-1.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/http_parser-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "intl",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.19.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "leak_tracker",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker-10.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "leak_tracker_flutter_testing",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_flutter_testing-3.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "leak_tracker_testing",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/leak_tracker_testing-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "lints",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/lints-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "matcher",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.16+1",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "material_color_utilities",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/material_color_utilities-0.11.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "meta",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/meta-1.15.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "nested",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "nm",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/nm-0.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/path-1.9.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "path_provider",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "path_provider_android",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_android-2.2.12",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "path_provider_foundation",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_foundation-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "path_provider_linux",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_linux-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "path_provider_platform_interface",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_platform_interface-2.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "path_provider_windows",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_windows-2.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "petitparser",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/petitparser-6.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "platform",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/platform-3.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/plugin_platform_interface-2.1.8",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/provider-6.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "sky_engine",
+      "rootUri": "file:///C:/Users/willi/dev/flutter/bin/cache/pkg/sky_engine",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "source_span",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "stack_trace",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/stack_trace-1.12.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "stream_channel",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/stream_channel-2.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "string_scanner",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/string_scanner-1.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
+      "name": "synchronized",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/synchronized-3.3.0+3",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
+      "name": "term_glyph",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/term_glyph-1.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "test_api",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/test_api-0.7.3",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "typed_data",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/typed_data-1.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "vector_math",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/vector_math-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "vm_service",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/vm_service-14.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "web",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/web-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.4"
+    },
+    {
+      "name": "web_socket",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/web_socket-0.1.6",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "web_socket_channel",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/web_socket_channel-3.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "xdg_directories",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/xdg_directories-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
+      "name": "xml",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/xml-6.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.2"
+    },
+    {
+      "name": "background_services",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    }
+  ],
+  "generated": "2024-11-27T12:45:17.713745Z",
+  "generator": "pub",
+  "generatorVersion": "3.5.1",
+  "flutterRoot": "file:///C:/Users/willi/dev/flutter",
+  "flutterVersion": "3.24.1",
+  "pubCache": "file:///C:/Users/willi/AppData/Local/Pub/Cache"
+}

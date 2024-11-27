@@ -1,0 +1,1 @@
+ C:\\Users\\willi\\Documents\\alura\\background-services\\.dart_tool\\flutter_build\\4a9af1efe6971a8b973b7aec72cb2182\\native_assets.yaml: 
