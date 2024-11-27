@@ -386,6 +386,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "workmanager",
+      "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/workmanager-0.5.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.1"
+    },
+    {
       "name": "xdg_directories",
       "rootUri": "file:///C:/Users/willi/AppData/Local/Pub/Cache/hosted/pub.dev/xdg_directories-1.1.0",
       "packageUri": "lib/",
@@ -404,7 +410,7 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-11-27T12:45:17.713745Z",
+  "generated": "2024-11-27T19:57:09.160920Z",
   "generator": "pub",
   "generatorVersion": "3.5.1",
   "flutterRoot": "file:///C:/Users/willi/dev/flutter",
