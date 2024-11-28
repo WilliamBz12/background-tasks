@@ -109,9 +109,16 @@ class _ChecklistPageState extends State<ChecklistPage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Workmanager().registerPeriodicTask(
-            "1",
-            "simpleTask",
-            frequency: const Duration(minutes: 15),
+            "syncTask",
+            "couchbaseSync",
+            constraints: Constraints(
+              networkType: NetworkType.connected,
+              requiresBatteryNotLow: true,
+              requiresCharging: true,
+            ),
+            backoffPolicy: BackoffPolicy.exponential,
+            initialDelay: const Duration(seconds: 30), // Espera 30 segundos
+            frequency: const Duration(hours: 1),
           );
         },
         child: const Icon(Icons.add),
