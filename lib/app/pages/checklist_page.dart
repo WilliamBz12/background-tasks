@@ -12,6 +12,7 @@ import '../logic/checklist/checklist_state.dart';
 import '../logic/delete_checklist_item/delete_checklist_cubit.dart';
 import '../logic/update_checklist_item/update_checklist_cubit.dart';
 import '../services/couchbase_service.dart';
+import '../services/local_notificatoin_service.dart';
 import '../utils/couchbase_constants.dart';
 import '../widget/input_widget.dart';
 import '../widget/list_section_widget.dart';
@@ -94,6 +95,7 @@ class _ChecklistPageState extends State<ChecklistPage> {
   void initState() {
     super.initState();
     initApp();
+    context.read<LocalNotificatoinService>().showTestNotification();
   }
 
   @override

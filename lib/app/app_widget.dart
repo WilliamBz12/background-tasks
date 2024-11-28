@@ -10,6 +10,7 @@ import 'logic/update_checklist_item/update_checklist_cubit.dart';
 import 'pages/checklist_page.dart';
 import 'repositories/checklist_repository.dart';
 import 'services/couchbase_service.dart';
+import 'services/local_notificatoin_service.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -21,6 +22,10 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider(create: (context) => CouchbaseService()),
+
+        Provider(
+          create: (context) => LocalNotificatoinService(),
+        ),
 
         // Fornece o ChecklistRepository
         Provider(

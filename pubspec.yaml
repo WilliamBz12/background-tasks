@@ -45,6 +45,7 @@ dependencies:
   connectivity_plus: ^6.1.0
   flutter_dotenv: ^5.2.1
   workmanager: ^0.5.2
+  flutter_local_notifications: ^18.0.1
 
 dev_dependencies:
   flutter_test:

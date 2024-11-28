@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:background_services/app/services/couchbase_service.dart';
+import 'package:background_services/app/services/local_notificatoin_service.dart';
 import 'package:cbl_flutter/cbl_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -46,6 +47,8 @@ void callbackDispatcher() {
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await LocalNotificatoinService.initialize();
 
   await dotenv.load();
 
