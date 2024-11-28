@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:workmanager/workmanager.dart';
 
 import '../entities/shopping_item_entity.dart';
@@ -91,11 +92,21 @@ class _ChecklistPageState extends State<ChecklistPage> {
     context.read<CouchbaseService>().networkStatusListen();
   }
 
+  void scheduleDailyNotification() {
+    context.read<LocalNotificatoinService>().schedulePeriodicNotification(
+          title: 'Lembrete diário',
+          description: 'Lembre-se de revisar suas tarefas diárias!',
+          id: 1,
+          channel: 'daily_notification',
+          repeatInterval: RepeatInterval.daily,
+        );
+  }
+
   @override
   void initState() {
     super.initState();
     initApp();
-    context.read<LocalNotificatoinService>().showTestNotification();
+    scheduleDailyNotification();
   }
 
   @override

@@ -16,6 +16,7 @@ void callbackDispatcher() {
     final userId = inputData?['userId'];
     print("Executando tarefa com userId: $userId");
     final service = CouchbaseService();
+    final notification = LocalNotificatoinService();
 
     if (task == 'couchbaseSync') {
       bool synced = false;
@@ -30,6 +31,15 @@ void callbackDispatcher() {
         Workmanager().registerOneOffTask(
           "retryTask",
           "retrySyncExecution",
+        );
+      }
+
+      if (synced) {
+        notification.showNotification(
+          title: 'Sincronizamos seus dados!',
+          description: 'Dados atualizados, venha conferir',
+          id: 2,
+          channel: 'alert',
         );
       }
       return Future.value(synced);

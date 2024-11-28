@@ -16,23 +16,28 @@ class LocalNotificatoinService {
     await flutterLocalNotificationsPlugin.initialize(initSettings);
   }
 
-  Future<void> showTestNotification() async {
-    const AndroidNotificationDetails androidDetails =
+  Future<void> showNotification({
+    required String title,
+    required String description,
+    required int id,
+    required String channel,
+  }) async {
+    final AndroidNotificationDetails androidDetails =
         AndroidNotificationDetails(
-      'test_channel',
+      channel,
       'Test Notifications',
       channelDescription: 'Canal para notificações de teste',
       importance: Importance.high,
       priority: Priority.high,
     );
 
-    const NotificationDetails notificationDetails =
+    final NotificationDetails notificationDetails =
         NotificationDetails(android: androidDetails);
 
     await flutterLocalNotificationsPlugin.show(
-      0,
-      'Teste de Notificação',
-      'Esta é uma notificação de teste.',
+      id,
+      title,
+      description,
       notificationDetails,
     );
   }
@@ -44,6 +49,12 @@ class LocalNotificatoinService {
     required String channel,
     required Duration scheduleTime,
   }) async {
+    final alreadySchedule = await notificationAlreadySchedule(id);
+
+    if (alreadySchedule) {
+      return;
+    }
+
     final AndroidNotificationDetails androidDetails =
         AndroidNotificationDetails(
       channel,
@@ -75,6 +86,12 @@ class LocalNotificatoinService {
     required String channel,
     required RepeatInterval repeatInterval,
   }) async {
+    final alreadySchedule = await notificationAlreadySchedule(id);
+
+    if (alreadySchedule) {
+      return;
+    }
+
     final AndroidNotificationDetails androidDetails =
         AndroidNotificationDetails(
       channel,
@@ -95,5 +112,11 @@ class LocalNotificatoinService {
       notificationDetails,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
+  }
+
+  Future<bool> notificationAlreadySchedule(int notificationId) async {
+    final items =
+        await flutterLocalNotificationsPlugin.pendingNotificationRequests();
+    return items.any((e) => e.id == notificationId);
   }
 }
