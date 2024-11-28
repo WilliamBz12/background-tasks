@@ -1,3 +1,4 @@
+import 'package:background_services/app/services/localization_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider(create: (context) => CouchbaseService()),
+        Provider(create: (context) => LocalizationService()),
 
         Provider(
           create: (context) => LocalNotificatoinService(),
