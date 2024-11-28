@@ -12,6 +12,19 @@ class LocalizationService {
     }
   }
 
+  double calculateDistance({
+    required Position? currentLocation,
+    required double endLatitude,
+    required double endLongitude,
+  }) {
+    return Geolocator.distanceBetween(
+      currentLocation?.latitude ?? 0,
+      currentLocation?.longitude ?? 0,
+      endLatitude,
+      endLongitude,
+    );
+  }
+
   Future<Position?> getCurrentLocation() async {
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {

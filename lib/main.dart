@@ -25,6 +25,22 @@ void callbackDispatcher() {
       Position? position = await localization.getCurrentLocation();
       print(
           "Localização em segundo plano: ${position?.latitude}, ${position?.longitude}");
+
+      final distance = localization.calculateDistance(
+        currentLocation: position,
+        endLatitude: 37.4219983,
+        endLongitude: -122.084,
+      );
+      if (distance <= 100) {
+        // 100 metros
+        print("Usuário está próximo do destino.");
+        await notification.showNotification(
+          title: "Você chegou!",
+          description: "Está a menos de 100 metros do destino.",
+          id: 4,
+          channel: 'alert',
+        );
+      }
       return Future.value(true);
     }
     if (task == 'couchbaseSync') {
