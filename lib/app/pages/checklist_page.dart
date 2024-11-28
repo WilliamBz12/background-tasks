@@ -140,6 +140,12 @@ class _ChecklistPageState extends State<ChecklistPage> {
             initialDelay: const Duration(seconds: 30), // Espera 30 segundos
             frequency: const Duration(hours: 1),
           );
+
+          Workmanager().registerPeriodicTask(
+            "background_location",
+            "locationTask",
+            frequency: const Duration(minutes: 15),
+          );
         },
         child: const Icon(Icons.add),
       ),

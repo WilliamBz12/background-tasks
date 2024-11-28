@@ -2,9 +2,11 @@ import 'dart:io';
 
 import 'package:background_services/app/services/couchbase_service.dart';
 import 'package:background_services/app/services/local_notificatoin_service.dart';
+import 'package:background_services/app/services/localization_service.dart';
 import 'package:cbl_flutter/cbl_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:workmanager/workmanager.dart';
 
 import 'app/app_widget.dart';
@@ -17,7 +19,14 @@ void callbackDispatcher() {
     print("Executando tarefa com userId: $userId");
     final service = CouchbaseService();
     final notification = LocalNotificatoinService();
+    final localization = LocalizationService();
 
+    if (task == 'locationTask') {
+      Position? position = await localization.getCurrentLocation();
+      print(
+          "Localização em segundo plano: ${position?.latitude}, ${position?.longitude}");
+      return Future.value(true);
+    }
     if (task == 'couchbaseSync') {
       bool synced = false;
       await service.startReplication(
