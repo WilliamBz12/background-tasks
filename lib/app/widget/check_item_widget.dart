@@ -1,4 +1,6 @@
+import 'package:background_services/app/services/local_notificatoin_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
 import '../entities/shopping_item_entity.dart';
@@ -51,6 +53,22 @@ class _ChecklistItemWidgetState extends State<ChecklistItemWidget> {
               color: Colors.black,
             ),
             onPressed: widget.onDelete,
+          ),
+          IconButton(
+            icon: const Icon(
+              Icons.notification_add,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              context.read<LocalNotificatoinService>().scheduleNotification(
+                    title: 'Checar: ${widget.item.title}',
+                    description: 'Verifique o estoque!',
+                    id: 4,
+                    channel: 'product',
+                    scheduleTime: const Duration(minutes: 2),
+                  );
+              print('Agendado');
+            },
           ),
           IconButton(
             icon: const Icon(
