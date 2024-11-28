@@ -1,4 +1,5 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:timezone/timezone.dart' as tz;
 
 class LocalNotificatoinService {
   static final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -33,6 +34,66 @@ class LocalNotificatoinService {
       'Teste de Notificação',
       'Esta é uma notificação de teste.',
       notificationDetails,
+    );
+  }
+
+  Future<void> scheduleNotification({
+    required String title,
+    required String description,
+    required int id,
+    required String channel,
+    required Duration scheduleTime,
+  }) async {
+    final AndroidNotificationDetails androidDetails =
+        AndroidNotificationDetails(
+      channel,
+      'Scheduled Notifications',
+      channelDescription: 'Notificações agendadas',
+      importance: Importance.high,
+      priority: Priority.high,
+    );
+
+    final NotificationDetails notificationDetails =
+        NotificationDetails(android: androidDetails);
+
+    await flutterLocalNotificationsPlugin.zonedSchedule(
+      id,
+      title,
+      description,
+      tz.TZDateTime.now(tz.local).add(scheduleTime),
+      notificationDetails,
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+      uiLocalNotificationDateInterpretation:
+          UILocalNotificationDateInterpretation.absoluteTime,
+    );
+  }
+
+  Future<void> schedulePeriodicNotification({
+    required String title,
+    required String description,
+    required int id,
+    required String channel,
+    required RepeatInterval repeatInterval,
+  }) async {
+    final AndroidNotificationDetails androidDetails =
+        AndroidNotificationDetails(
+      channel,
+      'Periodic Notifications',
+      channelDescription: 'Notificações periódicas',
+      importance: Importance.high,
+      priority: Priority.high,
+    );
+
+    final NotificationDetails notificationDetails =
+        NotificationDetails(android: androidDetails);
+
+    await flutterLocalNotificationsPlugin.periodicallyShow(
+      id,
+      title,
+      description,
+      repeatInterval,
+      notificationDetails,
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
   }
 }
