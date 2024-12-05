@@ -10,17 +10,21 @@ import 'app/app_widget.dart';
 void callbackDispatcher() {
   Workmanager().executeTask(
     (taskName, inputData) async {
-      final service = CouchbaseService();
+      if (taskName == 'background-sync') {
+        await CouchbaseLiteFlutter.init();
 
-      bool result = false;
+        final service = CouchbaseService();
 
-      await service.startReplication(
-        collectionName: CouchbaseContants.collection,
-        onSynced: () {
-          result = true;
-        },
-      );
-      return result;
+        bool result = await service.startReplication(
+          continuos: false,
+          collectionName: CouchbaseContants.collection,
+          onSynced: () {},
+        );
+        return result;
+      } else {
+        print("Tarefa desconhecida");
+        return true;
+      }
     },
   );
 }

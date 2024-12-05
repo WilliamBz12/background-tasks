@@ -14,11 +14,12 @@ class CouchbaseService {
     database ??= await Database.openAsync('database');
   }
 
-  Future<void> startReplication({
+  Future<bool> startReplication({
     required String collectionName,
     required Function() onSynced,
     bool continuos = true,
   }) async {
+    await init();
     final collection = await database?.createCollection(
       collectionName,
       CouchbaseContants.scope,
@@ -48,18 +49,43 @@ class CouchbaseService {
         ),
       );
       replicator = await Replicator.createAsync(replicatorConfig);
+
+      bool hasError = false;
+      bool hasSyced = false;
+
       replicator?.addChangeListener(
         (change) {
           if (change.status.error != null) {
+            hasError = true;
             print('Ocorreu um erro na replicação');
           }
           if (change.status.activity == ReplicatorActivityLevel.idle) {
+            hasSyced = true;
             print('ocorreu uma sincronização');
             onSynced();
+          }
+          if (change.status.activity == ReplicatorActivityLevel.stopped) {
+            hasSyced = true;
+            print('paralizou a sincronização');
           }
         },
       );
       await replicator?.start();
+
+      final date = DateTime.now();
+      if (!continuos) {
+        while (!hasSyced && !hasError) {
+          if (date.difference(DateTime.now()).inSeconds < 15) {
+            await Future.delayed(const Duration(milliseconds: 500));
+          } else {
+            hasSyced = true;
+          }
+        }
+      }
+
+      return hasSyced && !hasError;
+    } else {
+      return false;
     }
   }
 
