@@ -110,9 +110,12 @@ class _ChecklistPageState extends State<ChecklistPage> {
         child: const Icon(Icons.add),
         onPressed: () {
           Workmanager().registerPeriodicTask(
-            'first-task-id',
-            'first-task',
-            frequency: const Duration(minutes: 15),
+            'background-sync-id',
+            'background-sync',
+            frequency: const Duration(hours: 1),
+            constraints: Constraints(
+              networkType: NetworkType.connected,
+            ),
           );
         },
       ),
