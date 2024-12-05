@@ -17,6 +17,7 @@ class CouchbaseService {
   Future<void> startReplication({
     required String collectionName,
     required Function() onSynced,
+    bool continuos = true,
   }) async {
     final collection = await database?.createCollection(
       collectionName,
@@ -31,7 +32,7 @@ class CouchbaseService {
           username: CouchbaseContants.userName,
           password: CouchbaseContants.password,
         ),
-        continuous: true,
+        continuous: continuos,
         replicatorType: ReplicatorType.pushAndPull,
         enableAutoPurge: true,
       );

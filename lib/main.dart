@@ -1,3 +1,5 @@
+import 'package:background_services/app/services/couchbase_service.dart';
+import 'package:background_services/app/utils/couchbase_constants.dart';
 import 'package:cbl_flutter/cbl_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:workmanager/workmanager.dart';
@@ -8,8 +10,17 @@ import 'app/app_widget.dart';
 void callbackDispatcher() {
   Workmanager().executeTask(
     (taskName, inputData) async {
-      print('Minha primeira task em background');
-      return true;
+      final service = CouchbaseService();
+
+      bool result = false;
+
+      await service.startReplication(
+        collectionName: CouchbaseContants.collection,
+        onSynced: () {
+          result = true;
+        },
+      );
+      return result;
     },
   );
 }
