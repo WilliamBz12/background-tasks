@@ -116,6 +116,8 @@ class _ChecklistPageState extends State<ChecklistPage> {
             constraints: Constraints(
               networkType: NetworkType.connected,
             ),
+            backoffPolicy: BackoffPolicy.linear,
+            backoffPolicyDelay: const Duration(seconds: 15),
           );
         },
       ),

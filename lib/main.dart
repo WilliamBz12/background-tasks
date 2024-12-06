@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:background_services/app/services/couchbase_service.dart';
 import 'package:background_services/app/utils/couchbase_constants.dart';
 import 'package:cbl_flutter/cbl_flutter.dart';
@@ -20,6 +22,14 @@ void callbackDispatcher() {
           collectionName: CouchbaseContants.collection,
           onSynced: () {},
         );
+
+        if (!result && Platform.isIOS) {
+          Workmanager().registerOneOffTask(
+            'retry-background-sync-id',
+            'background-sync',
+            initialDelay: const Duration(seconds: 15),
+          );
+        }
         return result;
       } else {
         print("Tarefa desconhecida");
