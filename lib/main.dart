@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:workmanager/workmanager.dart';
 
 import 'app/app_widget.dart';
+import 'app/services/local_notifications_service.dart';
 
 @pragma('vm:entry-point')
 void callbackDispatcher() {
@@ -43,6 +44,10 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await CouchbaseLiteFlutter.init();
+
+  final localNotificationService = LocalNotificationsService();
+
+  localNotificationService.init();
 
   Workmanager().initialize(
     callbackDispatcher,
