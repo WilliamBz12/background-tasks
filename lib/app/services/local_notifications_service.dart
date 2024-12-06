@@ -1,3 +1,4 @@
+import 'package:background_services/app/app_widget.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class LocalNotificationsService {
@@ -9,7 +10,13 @@ class LocalNotificationsService {
     const settings = InitializationSettings(
       android: androidSettings,
     );
-    await plugin.initialize(settings);
+    await plugin.initialize(
+      settings,
+      onDidReceiveNotificationResponse: (details) {
+        navigatorKey.currentState?.pushNamed('/checklist');
+        print(details.payload);
+      },
+    );
   }
 
   void showNotification() {
@@ -24,6 +31,7 @@ class LocalNotificationsService {
       'Notificação de teste',
       'Descrição de teste',
       const NotificationDetails(android: androidNotificationDetails),
+      payload: 'checklist',
     );
   }
 }

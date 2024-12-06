@@ -11,6 +11,8 @@ import 'pages/checklist_page.dart';
 import 'repositories/checklist_repository.dart';
 import 'services/couchbase_service.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -52,6 +54,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Checklist',
+        navigatorKey: navigatorKey,
         locale: const Locale('pt', 'BR'),
         theme: ThemeData(
           fontFamily: 'numans',
@@ -62,6 +65,9 @@ class MyApp extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
+        routes: {
+          "/checklist": (_) => const ChecklistPage(),
+        },
         home: ChecklistPage(),
       ),
     );
