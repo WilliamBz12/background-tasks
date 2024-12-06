@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:background_services/app/services/local_notifications_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:workmanager/workmanager.dart';
@@ -131,6 +132,13 @@ class _ChecklistPageState extends State<ChecklistPage> {
         ),
         child: ListView(
           children: [
+            TextButton(
+              onPressed: () {
+                final notificationService = LocalNotificationsService();
+                notificationService.showNotification();
+              },
+              child: const Text("Mostrar notificação"),
+            ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
               decoration: BoxDecoration(
