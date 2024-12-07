@@ -39,19 +39,24 @@ class LocalNotificationsService {
     }
   }
 
-  void showNotification() {
-    const androidNotificationDetails = AndroidNotificationDetails(
-      'test-id',
-      'Teste',
+  void showNotification({
+    required String title,
+    required String description,
+    required int id,
+    String? payload,
+  }) {
+    final androidNotificationDetails = AndroidNotificationDetails(
+      '$id',
+      title,
       priority: Priority.high,
       importance: Importance.high,
     );
     plugin.show(
-      1,
-      'Notificação de teste',
-      'Descrição de teste',
-      const NotificationDetails(android: androidNotificationDetails),
-      payload: 'checklist',
+      id,
+      title,
+      description,
+      NotificationDetails(android: androidNotificationDetails),
+      payload: payload,
     );
   }
 

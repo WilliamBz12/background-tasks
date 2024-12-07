@@ -17,6 +17,8 @@ void callbackDispatcher() {
         await CouchbaseLiteFlutter.init();
 
         final service = CouchbaseService();
+        final notificationsService = LocalNotificationsService();
+        await notificationsService.init();
 
         bool result = await service.startReplication(
           continuos: false,
@@ -29,6 +31,20 @@ void callbackDispatcher() {
             'retry-background-sync-id',
             'background-sync',
             initialDelay: const Duration(seconds: 15),
+          );
+        }
+
+        if (result) {
+          notificationsService.showNotification(
+            title: 'Dados sincronizados',
+            description: 'Acabamos de sincronizar os seus dados',
+            id: 4,
+          );
+        } else {
+          notificationsService.showNotification(
+            description: 'Não conseguimos sincronizar seus dados',
+            title: 'Erro na sincronização',
+            id: 5,
           );
         }
         return result;
@@ -51,7 +67,7 @@ Future<void> main() async {
 
   Workmanager().initialize(
     callbackDispatcher,
-    isInDebugMode: true,
+    isInDebugMode: false,
   );
 
   runApp(const MyApp());
