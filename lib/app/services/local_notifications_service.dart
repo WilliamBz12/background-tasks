@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:background_services/app/app_widget.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
@@ -21,6 +23,20 @@ class LocalNotificationsService {
     );
 
     tz.initializeTimeZones();
+    if (Platform.isAndroid) {
+      requestAndroidNotificationPermissions();
+    }
+  }
+
+  void requestAndroidNotificationPermissions() async {
+    final androidPlugin = plugin.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>();
+
+    final result = await androidPlugin?.requestExactAlarmsPermission();
+
+    if (result == false) {
+      print("Permissões não concedidas");
+    }
   }
 
   void showNotification() {
