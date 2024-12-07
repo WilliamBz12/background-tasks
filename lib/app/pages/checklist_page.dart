@@ -14,7 +14,6 @@ import '../logic/checklist/checklist_state.dart';
 import '../logic/delete_checklist_item/delete_checklist_cubit.dart';
 import '../logic/update_checklist_item/update_checklist_cubit.dart';
 import '../services/couchbase_service.dart';
-import '../services/localization_service.dart';
 import '../utils/couchbase_constants.dart';
 import '../widget/input_widget.dart';
 import '../widget/list_section_widget.dart';
@@ -91,10 +90,6 @@ class _ChecklistPageState extends State<ChecklistPage> {
           },
         );
     context.read<CouchbaseService>().networkStatusListen();
-
-    final localizationService = LocalizationService();
-    final location = await localizationService.getLocalization();
-    print('${location?.latitude}, ${location?.longitude}');
   }
 
   @override
@@ -149,6 +144,18 @@ class _ChecklistPageState extends State<ChecklistPage> {
                 );
               },
               child: const Text("Agendar notificação diária"),
+            ),
+            TextButton(
+              onPressed: () {
+                Workmanager().registerPeriodicTask(
+                  'localization-notify-id',
+                  'localization-notify',
+                  frequency: const Duration(hours: 6),
+                  backoffPolicy: BackoffPolicy.exponential,
+                  backoffPolicyDelay: const Duration(minutes: 6),
+                );
+              },
+              child: const Text("Ativar atividade de localização"),
             ),
             TextButton(
               onPressed: () {

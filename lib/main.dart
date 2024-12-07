@@ -8,6 +8,7 @@ import 'package:workmanager/workmanager.dart';
 
 import 'app/app_widget.dart';
 import 'app/services/local_notifications_service.dart';
+import 'app/services/localization_service.dart';
 
 @pragma('vm:entry-point')
 void callbackDispatcher() {
@@ -48,6 +49,12 @@ void callbackDispatcher() {
           );
         }
         return result;
+      } else if (taskName == 'localization-notify') {
+        final localizationService = LocalizationService();
+
+        final position = await localizationService.getLocalization();
+        print('${position?.latitude}, ${position?.longitude}');
+        return true;
       } else {
         print("Tarefa desconhecida");
         return true;
