@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:background_services/app/services/local_notifications_service.dart';
+import 'package:background_services/app/services/localization_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -146,14 +147,19 @@ class _ChecklistPageState extends State<ChecklistPage> {
               child: const Text("Agendar notificação diária"),
             ),
             TextButton(
-              onPressed: () {
-                Workmanager().registerPeriodicTask(
-                  'localization-notify-id',
-                  'localization-notify',
-                  frequency: const Duration(hours: 6),
-                  backoffPolicy: BackoffPolicy.exponential,
-                  backoffPolicyDelay: const Duration(minutes: 6),
-                );
+              onPressed: () async {
+                final service = LocalizationService();
+                final position = await service.getLocalization();
+
+                if (position != null) {
+                  Workmanager().registerPeriodicTask(
+                    'localization-notify-id',
+                    'localization-notify',
+                    frequency: const Duration(hours: 6),
+                    backoffPolicy: BackoffPolicy.exponential,
+                    backoffPolicyDelay: const Duration(minutes: 6),
+                  );
+                }
               },
               child: const Text("Ativar atividade de localização"),
             ),

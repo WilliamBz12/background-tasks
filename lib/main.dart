@@ -51,10 +51,27 @@ void callbackDispatcher() {
         return result;
       } else if (taskName == 'localization-notify') {
         final localizationService = LocalizationService();
+        final notificationsService = LocalNotificationsService();
+        await notificationsService.init();
 
         final position = await localizationService.getLocalization();
-        print('${position?.latitude}, ${position?.longitude}');
-        return true;
+
+        if (position != null) {
+          final distance = localizationService
+              .calculateDistanceBetweenUserAndMarket(position);
+
+          if (distance <= 5) {
+            notificationsService.showNotification(
+              title: 'Hora de abrir o app',
+              description: 'Lembrete diário por localização',
+              id: 7,
+            );
+          }
+
+          return true;
+        } else {
+          return false;
+        }
       } else {
         print("Tarefa desconhecida");
         return true;
