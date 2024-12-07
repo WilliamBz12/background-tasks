@@ -1,3 +1,4 @@
+import 'package:background_services/app/services/local_notifications_service.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -58,6 +59,21 @@ class _ChecklistItemWidgetState extends State<ChecklistItemWidget> {
               color: Colors.black,
             ),
             onPressed: widget.onEdit,
+          ),
+          IconButton(
+            icon: const Icon(
+              Icons.notifications,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              final service = LocalNotificationsService();
+              service.scheduleNotification(
+                title: 'Hora de verificar um item',
+                description: 'Verifique o item: ${widget.item.title}',
+                id: widget.item.hashCode,
+                scheduleTime: const Duration(seconds: 5),
+              );
+            },
           ),
         ],
       ),
