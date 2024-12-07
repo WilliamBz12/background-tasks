@@ -77,6 +77,36 @@ class LocalNotificationsService {
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+      payload: payload,
     );
+  }
+
+  void schedulePeriodicNotification({
+    required String title,
+    required String description,
+    required int id,
+    required RepeatInterval frequency,
+    String? payload,
+  }) {
+    final androidNotificationDetails = AndroidNotificationDetails(
+      '$id',
+      title,
+      priority: Priority.high,
+      importance: Importance.high,
+    );
+
+    plugin.periodicallyShow(
+      id,
+      title,
+      description,
+      frequency,
+      NotificationDetails(android: androidNotificationDetails),
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+      payload: payload,
+    );
+  }
+
+  void cancelNotifications() async {
+    await plugin.cancelAll();
   }
 }

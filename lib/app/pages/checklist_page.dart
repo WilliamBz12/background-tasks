@@ -3,6 +3,7 @@
 import 'package:background_services/app/services/local_notifications_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:workmanager/workmanager.dart';
 
 import '../entities/shopping_item_entity.dart';
@@ -135,9 +136,21 @@ class _ChecklistPageState extends State<ChecklistPage> {
             TextButton(
               onPressed: () {
                 final notificationService = LocalNotificationsService();
-                notificationService.showNotification();
+                notificationService.schedulePeriodicNotification(
+                  title: 'Hora de checar o app!',
+                  description: 'Abra o app e veja se há atualizações',
+                  id: 2,
+                  frequency: RepeatInterval.everyMinute,
+                );
               },
-              child: const Text("Mostrar notificação"),
+              child: const Text("Agendar notificação diária"),
+            ),
+            TextButton(
+              onPressed: () {
+                final notificationService = LocalNotificationsService();
+                notificationService.cancelNotifications();
+              },
+              child: const Text("Cancelar notificações"),
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 40),
