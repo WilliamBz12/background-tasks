@@ -50,5 +50,10 @@
 		<string>fetch</string>
 		<string>processing</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>O aplicativo precisa acessar sua localização enquanto estiver em uso para fazer comunicações de mensagens.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>O aplicativo precisa acessar sua localização em segundo plano para fazer comunicações de mensagens.</string>
+
 </dict>
 </plist>
